@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, useCallback } from "react";
+import { ChangeEvent, Dispatch, useCallback, useState } from "react";
 
 export const useChange = <
   E extends ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -15,3 +15,7 @@ export const useChange = <
   );
   return [state, action] as [string, (e: E) => void];
 };
+
+export function useInput(initialState: string | (() => string)) {
+  return useChange(useState(initialState));
+}

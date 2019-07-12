@@ -1,7 +1,6 @@
 import React, { FC, useContext } from "react";
 import { StoreContext } from "../store";
 import { useChange } from "../hooks/useChange";
-import { useInput } from "../hooks/useInput";
 
 export const Title: FC = () => {
   console.log("[Title] is rerender");
